@@ -19,7 +19,7 @@ variable "gcp_zone" {
 variable "vm_instance_count" {
   description = "The number of VM instances to create."
   type        = number
-  default     = 2
+  default     = 3
 }
 
 variable "vm_instance_name" {
