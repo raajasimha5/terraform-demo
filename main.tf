@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "rsv-bucket"
+    bucket = "tf-rsv-demo"
     prefix = "terraform/state"
   }
 }
