@@ -16,12 +16,6 @@ variable "gcp_zone" {
   default     = "us-central1-a"
 }
 
-variable "tf_state_bucket_name" {
-  description = "The globally unique name for the GCS bucket to store Terraform state."
-  type        = string
-  default     = "tf-rsv-demo"
-}
-
 variable "vm_instance_count" {
   description = "The number of VM instances to create."
   type        = number
