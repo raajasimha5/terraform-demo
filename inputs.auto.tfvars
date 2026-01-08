@@ -2,7 +2,7 @@
 # Provider / Global Settings
 project_id = "smiling-breaker-325908"
 region     = "asia-south1"
-zone       = "asia-south1-a"
+zone       = "asia-south1-b"
 
 # Network Settings
 network_name = "priv-vpc"
