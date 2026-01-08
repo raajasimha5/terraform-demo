@@ -40,7 +40,7 @@ data "google_netblock_ip_ranges" "legacy_health_checkers" {
 # Network + Subnet
 # ---------------------------
 
-resource "google_compute_network" "vpc" {
+resource "google_compute_network" "vpc1" {
   name                    = var.network_name
   project                 = var.project_id
   auto_create_subnetworks = false
@@ -48,7 +48,7 @@ resource "google_compute_network" "vpc" {
   depends_on = [google_project_service.compute]
 }
 
-resource "google_compute_subnetwork" "subnet" {
+resource "google_compute_subnetwork" "subnet1" {
   name                     = "${var.network_name}-subnet"
   ip_cidr_range            = var.subnet_cidr
   region                   = var.region
@@ -60,13 +60,13 @@ resource "google_compute_subnetwork" "subnet" {
 # Cloud Router + NAT
 # ---------------------------
 
-resource "google_compute_router" "router" {
+resource "google_compute_router" "router1" {
   name    = var.router_name
   region  = var.region
   network = google_compute_network.vpc.self_link
 }
 
-resource "google_compute_router_nat" "nat" {
+resource "google_compute_router_nat" "nat1" {
   name                               = var.nat_name
   region                             = var.region
   router                             = google_compute_router.router.name
