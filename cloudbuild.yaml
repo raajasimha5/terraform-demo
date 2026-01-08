@@ -18,16 +18,16 @@ steps:
     entrypoint: 'terraform'
     args: ['plan', '-out=tfplan']
 
-  # This step only runs on the 'master' branch
+  # This step only runs on the 'usecase-2' branch
   - name: 'hashicorp/terraform:1.8.2'
     entrypoint: 'sh'
     args:
       - '-c'
       - |
-        if [ "$BRANCH_NAME" = "main" ]; then
+        if [ "$BRANCH_NAME" = "usecase-2" ]; then
           echo "Applying changes on master branch."
           terraform apply -auto-approve tfplan
         else
-          echo "Skipping apply: not on master branch."
+          echo "Skipping apply: not on usecase-2 branch."
         fi
  
