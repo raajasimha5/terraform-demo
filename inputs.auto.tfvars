@@ -5,13 +5,13 @@ region     = "asia-south1"
 zone       = "asia-south1-b"
 
 # Network Settings
-network_name = "private-vpc"
+network_name = "private-vp1"
 subnet_cidr  = "10.10.0.0/24"
 
 # Module Inputs
-router_name    = "private-router"
-nat_name       = "private-nat"
-name_prefix    = "private-lb" # This prefix is used for the LB, MIG, etc.
+router_name    = "private-route1"
+nat_name       = "private-nat1"
+name_prefix    = "private-lb1" # This prefix is used for the LB, MIG, etc.
 machine_type   = "e2-micro"
 instance_count = 2
 
