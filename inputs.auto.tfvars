@@ -1,16 +1,24 @@
-##input for vpc##
- 
-auto_create_subnetworks=true
-vpc_name="my-custom-vpc"
-gcp_project_id="smiling-breaker-325908"
- 
- 
-## inputs for vm module##
 
-gcp_region           = "us-central1"
-gcp_zone             = "us-central1-a"
-vm_instance_count    = 2
-vm_instance_name     = "rsv-vm"
-vm_machine_type      = "e2-small"
-vm_image             = "debian-cloud/debian-11"
-network_name         = "rsv-network"
+# Provider / Global Settings
+project_id = "smiling-breaker-325908"
+region     = "asia-south1"
+zone       = "asia-south1-a"
+
+# Network Settings
+network_name = "priv-vpc"
+subnet_cidr  = "10.10.0.0/24"
+
+# Module Inputs
+router_name    = "private-router"
+nat_name       = "private-nat"
+name_prefix    = "private-lb" # This prefix is used for the LB, MIG, etc.
+machine_type   = "e2-micro"
+instance_count = 2
+
+# Instance tags (must include lb-backend for LB traffic and ssh-iap for IAP SSH)
+vm_tags = ["lb-backend", "ssh-iap"]
+
+## Debian image details 
+image_family = "debian-12"
+image_project = "debian-cloud"
+
