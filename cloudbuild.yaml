@@ -18,7 +18,7 @@ steps:
     entrypoint: 'terraform'
     args: ['plan', '-out=tfplan']
 
-  # This step only runs on the 'main' branch
+  # This step only runs on the 'main'branch
   - name: 'hashicorp/terraform:1.8.2'
     entrypoint: 'sh'
     args:
