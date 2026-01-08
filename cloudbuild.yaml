@@ -1,5 +1,6 @@
 options:
   logging: CLOUD_LOGGING_ONLY
+  
 steps:
   # Use a specific version of the terraform image for consistent builds
   - name: 'hashicorp/terraform:1.8.2'
