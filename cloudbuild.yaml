@@ -25,7 +25,7 @@ steps:
       - '-c'
       - |
         if [ "$BRANCH_NAME" = "main" ]; then
-          echo "Applying changes on master branch."
+          echo "Applying changes on main branch."
           terraform apply -auto-approve tfplan
         else
           echo "Skipping apply: not on main branch."
