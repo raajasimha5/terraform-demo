@@ -119,6 +119,7 @@ resource "google_compute_backend_service" "backend" {
   backend {
     group = google_compute_instance_group_manager.mig.instance_group
   }
+depends_on = [google_compute_instance_group_manager.mig]
 }
 
 # URL map, target proxy, and global forwarding rule (HTTP:80)
